@@ -56,10 +56,10 @@ const projects = [
     tagline: "Dynamic Dark & Light Theme Showcase",
     description:
       "Multi-page SaaS website with smooth light and dark mode switching, modern typography, and responsive layouts.",
-    link: "https://github.com/Sage-NBA/Light-and-Dark-mode",
+    link: "https://light-and-dark-mode-beryl.vercel.app/",
     github: "https://github.com/Sage-NBA/Light-and-Dark-mode",
     tech: "React • TypeScript • React Router",
-    isLive: false,
+    isLive: true,
   },
 ];
 
