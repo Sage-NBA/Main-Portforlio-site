@@ -12,6 +12,16 @@ const projects = [
     isLive: true,
   },
   {
+    title: "Light & Dark Mode SaaS",
+    tagline: "Dynamic Theme Switching Platform",
+    description:
+      "A modern web application featuring smooth light and dark mode switching, clean typography, and responsive layouts.",
+    link: "https://light-and-dark-mode-beryl.vercel.app/",
+    github: "https://github.com/Sage-NBA/Light-and-Dark-mode",
+    tech: "React • TypeScript • Tailwind",
+    isLive: true,
+  },
+  {
     title: "Nimbus Weather & Crypto",
     tagline: "Live Multi-Widget Dashboard",
     description:
@@ -40,26 +50,6 @@ const projects = [
     github: "https://github.com/Sage-NBA/Camera-site",
     tech: "React • TypeScript • Tailwind",
     isLive: false,
-  },
-  {
-    title: "SoundWave Music Player",
-    tagline: "Audio Streaming & iTunes Search API",
-    description:
-      "Music streaming web application featuring live track search via iTunes API, audio previews, and custom playlists.",
-    link: "https://github.com/Sage-NBA/Music-Repo",
-    github: "https://github.com/Sage-NBA/Music-Repo",
-    tech: "React • TypeScript • iTunes API",
-    isLive: false,
-  },
-  {
-    title: "Aura SaaS & Theme Engine",
-    tagline: "Dynamic Dark & Light Theme Showcase",
-    description:
-      "Multi-page SaaS website with smooth light and dark mode switching, modern typography, and responsive layouts.",
-    link: "https://light-and-dark-mode-beryl.vercel.app/",
-    github: "https://github.com/Sage-NBA/Light-and-Dark-mode",
-    tech: "React • TypeScript • React Router",
-    isLive: true,
   },
 ];
 
