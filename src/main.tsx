@@ -1,16 +1,16 @@
-import {StrictMode} from "react";
-import {createRoot} from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import "./index.css";
-import {Navbar} from "./component";
+import { Navbar, Social } from "./component";
 import App from "./App.tsx";
-import {BrowserRouter} from "react-router-dom";
-import {Social} from "./component";
+import { BrowserRouter } from "react-router-dom";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Navbar />
       <App />
+      <Social />
     </BrowserRouter>
-    <Social />
   </StrictMode>,
 );

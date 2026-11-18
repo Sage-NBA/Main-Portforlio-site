@@ -1,111 +1,106 @@
-import {useState} from "react";
-import Button from "./Button";
-import {Link} from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
-  const [isOpen, SetIsOpen] = useState(false);
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    { label: "Home", path: "/Home" },
+    { label: "Projects", path: "/Projects" },
+    { label: "About", path: "/About" },
+    { label: "Services", path: "/Services" },
+    { label: "Contact", path: "/Contact" },
+  ];
+
+  const isActive = (path: string) => {
+    if (path === "/Home" && (location.pathname === "/" || location.pathname === "/Home")) {
+      return true;
+    }
+    return location.pathname.toLowerCase() === path.toLowerCase();
+  };
 
   return (
-    <section>
-      <nav className="justify-between p-5 items-center hidden md:flex">
-        <div className="w-10 h-10 rounded-[20px]">
-          <img
-            className="w-full h-full object-cover"
-            src="images/sam.jpeg"
-          ></img>
-        </div>
-        <div className="flex gap-5 items-center">
-          <Link
-            className="transition duration-400 rounded-2xl p-1 animated-link"
-            to="/Home"
-          >
-            Home
-          </Link>
-
-          <Link
-            className="transition duration-400 rounded-2xl p-1 animated-link"
-            to="/About"
-          >
-            About
-          </Link>
-          <Link
-            className="transition duration-400 rounded-2xl p-1 animated-link"
-            to="/Services"
-          >
-            Services
-          </Link>
-          <Link
-            className="transition duration-400 rounded-2xl p-1 animated-link"
-            to="/Contact"
-          >
-            Contact
-          </Link>
-        </div>
-        <Button text="Get in Touch" />
-      </nav>
-
-      {/* MOBILE */}
-      <nav className="">
-        <div className="flex p-5 md:hidden items-center justify-between">
-          <div className="w-15 rounded-[20px] h-15">
+    <nav className="border-b border-gray-200 bg-white sticky top-0 z-40">
+      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+        {/* Brand / Logo */}
+        <Link to="/" className="flex items-center gap-3">
+          <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-300">
             <img
               className="w-full h-full object-cover"
               src="images/sam.jpeg"
-            ></img>
+              alt="Emmanuel Samuel"
+            />
           </div>
+          <span className="font-bold text-gray-900 text-sm sm:text-base">
+            Emmanuel Samuel
+          </span>
+        </Link>
 
-          {/* hambuger */}
-          <button onClick={() => SetIsOpen(!isOpen)}>
-            <i
-              className={`text-4xl relative left-0 ${isOpen ? "ri-close-line" : "ri-menu-line"}`}
-            ></i>
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`text-sm font-medium transition ${
+                isActive(link.path)
+                  ? "text-blue-600 font-bold"
+                  : "text-gray-600 hover:text-gray-900"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop CTA Button */}
+        <div className="hidden md:block">
+          <Link
+            to="/Contact"
+            className="px-4 py-2 bg-gray-900 hover:bg-black text-white text-xs font-semibold rounded-xl transition"
+          >
+            Get in Touch
+          </Link>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-800 text-xl"
+            aria-label="Toggle Menu"
+          >
+            <i className={isOpen ? "ri-close-line" : "ri-menu-line"}></i>
           </button>
         </div>
-        {/* navText */}
+      </div>
 
-        {isOpen && (
-          <div className=" text-3xl space-y-10 text-[#f7f5f5] absolute w-full mt-0 pt-20 bg-black/70 rounded-2xl text-center font-bold h-screen">
-            <p>
-              <Link
-                onClick={() => SetIsOpen(false)}
-                className=" hover:bg-gray-500 transition duration-400 rounded-2xl p-1"
-                to="/Home"
-              >
-                Home
-              </Link>
-            </p>
-
-            <p>
-              <Link
-                onClick={() => SetIsOpen(false)}
-                className=" hover:bg-gray-500 transition duration-400 rounded-2xl p-1"
-                to="/About"
-              >
-                About
-              </Link>
-            </p>
-            <p>
-              <Link
-                onClick={() => SetIsOpen(false)}
-                className=" hover:bg-gray-500 transition duration-400 rounded-2xl p-1"
-                to="/Services"
-              >
-                Services
-              </Link>
-            </p>
-            <p>
-              <Link
-                onClick={() => SetIsOpen(false)}
-                className=" hover:bg-gray-500 transition duration-400 rounded-2xl p-1"
-                to="/Contact"
-              >
-                Contact
-              </Link>
-            </p>
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden border-t border-gray-100 bg-white px-5 py-4 space-y-3">
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              onClick={() => setIsOpen(false)}
+              className="block text-sm font-semibold text-gray-700 hover:text-blue-600 py-1"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <div className="pt-2">
+            <Link
+              to="/Contact"
+              onClick={() => setIsOpen(false)}
+              className="block text-center py-2 bg-gray-900 text-white text-xs font-semibold rounded-xl"
+            >
+              Get in Touch
+            </Link>
           </div>
-        )}
-      </nav>
-    </section>
+        </div>
+      )}
+    </nav>
   );
 }
 
