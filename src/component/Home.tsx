@@ -46,10 +46,10 @@ const projects = [
     tagline: "CCTV Camera Monitoring",
     description:
       "A security dashboard to monitor CCTV camera statuses, active recording streams, and online/offline camera triage.",
-    link: "https://github.com/Sage-NBA/Camera-site",
+    link: "https://camera-site-chi.vercel.app/",
     github: "https://github.com/Sage-NBA/Camera-site",
     tech: "React • TypeScript • Tailwind",
-    isLive: false,
+    isLive: true,
   },
 ];
 
@@ -79,10 +79,11 @@ export function Home() {
           </h1>
 
           <p className="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl">
-            Hi, I'm <strong className="text-gray-900">Emmanuel Samuel</strong>. I build clean,
-            responsive, and modern web applications with <strong>React</strong>,{" "}
-            <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>. Explore my live
-            websites and projects below.
+            Hi, I'm <strong className="text-gray-900">Emmanuel Samuel</strong>.
+            I build clean, responsive, and modern web applications with{" "}
+            <strong>React</strong>, <strong>TypeScript</strong>, and{" "}
+            <strong>Tailwind CSS</strong>. Explore my live websites and projects
+            below.
           </p>
 
           {/* Action Buttons */}
@@ -116,14 +117,18 @@ export function Home() {
       </section>
 
       {/* FULL WIDTH WEBSITES & PROJECTS SECTION */}
-      <section id="projects" className="w-full space-y-8 pt-10 border-t border-gray-200">
+      <section
+        id="projects"
+        className="w-full space-y-8 pt-10 border-t border-gray-200"
+      >
         <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight">
               My Websites & Projects
             </h2>
             <p className="text-gray-600 text-base md:text-lg mt-2">
-              Click "Visit Website" to launch any live site, or click "Code" to inspect the repository on GitHub.
+              Click "Visit Website" to launch any live site, or click "Code" to
+              inspect the repository on GitHub.
             </p>
           </div>
 
@@ -161,8 +166,12 @@ export function Home() {
                   )}
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900">{proj.title}</h3>
-                <p className="text-xs font-semibold text-gray-500">{proj.tagline}</p>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {proj.title}
+                </h3>
+                <p className="text-xs font-semibold text-gray-500">
+                  {proj.tagline}
+                </p>
                 <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                   {proj.description}
                 </p>
@@ -199,7 +208,9 @@ export function Home() {
       {/* FULL WIDTH CONTACT CALLOUT */}
       <section className="w-full p-8 md:p-14 rounded-3xl bg-black text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
         <div className="space-y-2 text-center md:text-left">
-          <h3 className="text-3xl md:text-4xl font-bold">Have a project in mind?</h3>
+          <h3 className="text-3xl md:text-4xl font-bold">
+            Have a project in mind?
+          </h3>
           <p className="text-base text-gray-400">
             Let's build something responsive, fast, and modern together.
           </p>
