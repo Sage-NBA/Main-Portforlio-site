@@ -36,10 +36,10 @@ const allProjects = [
     tagline: "Project Timeline & Analytics",
     description:
       "A project management tool with dual timeline and grid views, milestone creation modal, and real-time progress tracking.",
-    link: "https://github.com/Sage-NBA/Road-Map",
+    link: "https://road-map-pink.vercel.app/",
     github: "https://github.com/Sage-NBA/Road-Map",
     tech: "React • TypeScript • Tailwind",
-    isLive: false,
+    isLive: true,
   },
   {
     title: "CamTrack Security Dashboard",
