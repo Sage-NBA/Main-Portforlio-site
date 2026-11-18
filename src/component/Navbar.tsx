@@ -21,32 +21,32 @@ export function Navbar() {
   };
 
   return (
-    <nav className="border-b border-gray-200 bg-white sticky top-0 z-40">
-      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+    <nav className="w-full border-b border-gray-200 bg-white sticky top-0 z-40">
+      <div className="w-full px-5 md:px-10 h-18 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full overflow-hidden border border-gray-300">
+          <div className="w-10 h-10 rounded-[18px] overflow-hidden border border-gray-300">
             <img
               className="w-full h-full object-cover"
               src="images/sam.jpeg"
               alt="Emmanuel Samuel"
             />
           </div>
-          <span className="font-bold text-gray-900 text-sm sm:text-base">
+          <span className="font-bold text-gray-900 text-base md:text-lg">
             Emmanuel Samuel
           </span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition ${
+              className={`text-sm md:text-base font-semibold transition ${
                 isActive(link.path)
-                  ? "text-blue-600 font-bold"
-                  : "text-gray-600 hover:text-gray-900"
+                  ? "text-blue-600 font-bold border-b-2 border-blue-600 pb-0.5"
+                  : "text-gray-700 hover:text-black"
               }`}
             >
               {link.label}
@@ -58,7 +58,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <Link
             to="/Contact"
-            className="px-4 py-2 bg-gray-900 hover:bg-black text-white text-xs font-semibold rounded-xl transition"
+            className="px-5 py-2.5 bg-black hover:bg-gray-800 text-white text-sm font-semibold rounded-2xl transition"
           >
             Get in Touch
           </Link>
@@ -68,7 +68,7 @@ export function Navbar() {
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100 text-gray-800 text-xl"
+            className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 text-gray-800 text-2xl"
             aria-label="Toggle Menu"
           >
             <i className={isOpen ? "ri-close-line" : "ri-menu-line"}></i>
@@ -78,13 +78,13 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-5 py-4 space-y-3">
+        <div className="md:hidden border-t border-gray-100 bg-white px-6 py-5 space-y-4 w-full">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block text-sm font-semibold text-gray-700 hover:text-blue-600 py-1"
+              className="block text-base font-bold text-gray-800 hover:text-blue-600 py-1"
             >
               {link.label}
             </Link>
@@ -93,7 +93,7 @@ export function Navbar() {
             <Link
               to="/Contact"
               onClick={() => setIsOpen(false)}
-              className="block text-center py-2 bg-gray-900 text-white text-xs font-semibold rounded-xl"
+              className="block text-center py-3 bg-black text-white text-sm font-semibold rounded-2xl"
             >
               Get in Touch
             </Link>

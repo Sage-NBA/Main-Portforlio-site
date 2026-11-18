@@ -16,64 +16,62 @@ export function Contact() {
       icon: "ri-whatsapp-fill",
       url: "https://wa.me/qr/HZ3MKMKKDZRHJ1",
       color: "hover:bg-emerald-500 hover:text-white",
-      tag: "Instant Chat",
+      tag: "+234 9070685246",
     },
     {
       name: "LinkedIn",
       icon: "ri-linkedin-fill",
       url: "http://bit.ly/4v7Ukpr",
       color: "hover:bg-blue-600 hover:text-white",
-      tag: "Professional Network",
+      tag: "Professional Profile",
     },
     {
       name: "GitHub",
       icon: "ri-github-fill",
       url: "https://github.com/Sage-NBA",
-      color: "hover:bg-gray-900 hover:text-white",
-      tag: "Code Repositories",
+      color: "hover:bg-black hover:text-white",
+      tag: "github.com/Sage-NBA",
     },
     {
       name: "Instagram",
       icon: "ri-instagram-fill",
       url: "https://www.instagram.com/samuelemmanuel668/",
       color: "hover:bg-pink-600 hover:text-white",
-      tag: "Visuals & Social",
+      tag: "@samuelemmanuel668",
     },
     {
       name: "Facebook",
       icon: "ri-facebook-circle-fill",
       url: "https://www.facebook.com/share/1EXC4sJ43C/",
       color: "hover:bg-blue-700 hover:text-white",
-      tag: "Community",
+      tag: "Emmanuel Samuel",
     },
   ];
 
   return (
-    <div className="py-12 md:py-20 px-5 max-w-6xl mx-auto space-y-16">
+    <div className="w-full py-10 md:py-16 px-5 md:px-10 space-y-16">
       {/* Header */}
-      <div className="space-y-4 max-w-3xl">
+      <div className="space-y-4 max-w-4xl">
         <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
           Get in Touch
         </span>
-        <h1 className="text-4xl sm:text-6xl font-black text-gray-900 tracking-tight leading-tight">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-gray-900 tracking-tight leading-tight">
           Let's Start a Conversation.
         </h1>
-        <p className="text-gray-600 text-base md:text-lg">
-          Whether you have a freelance project, an open developer role, or want to collaborate
-          on modern web apps, feel free to reach out. I typically respond within 24 hours.
+        <p className="text-gray-600 text-lg">
+          Whether you have a freelance project, an open developer role, or want to collaborate.
         </p>
       </div>
 
-      {/* Primary Contact Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Primary Contact Cards Grid — Full Width */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Email Card */}
-        <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+        <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl">
               <i className="ri-mail-send-fill"></i>
             </div>
-            <h3 className="font-bold text-gray-900 text-lg">Email Address</h3>
-            <p className="text-xs text-gray-500">Drop an email for formal inquiries and proposals.</p>
+            <h3 className="font-bold text-gray-900 text-xl">Email</h3>
             <p className="font-semibold text-gray-900 text-sm break-all">
               Sammy2007bright@gmail.com
             </p>
@@ -82,28 +80,27 @@ export function Contact() {
           <div className="pt-2 flex items-center gap-2">
             <a
               href="mailto:Sammy2007bright@gmail.com"
-              className="flex-1 text-center py-2 px-3 bg-gray-900 hover:bg-black text-white text-xs font-semibold rounded-xl transition"
+              className="flex-1 text-center py-2.5 px-3 bg-black hover:bg-gray-800 text-white text-xs font-semibold rounded-xl transition"
             >
               Send Email
             </a>
             <button
               onClick={copyEmail}
-              className="py-2 px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-medium rounded-xl transition"
+              className="py-2.5 px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-medium rounded-xl transition"
               title="Copy to clipboard"
             >
-              {copied ? "Copied!" : <i className="ri-file-copy-line"></i>}
+              {copied ? "Copied!" : "Copy"}
             </button>
           </div>
         </div>
 
         {/* WhatsApp & Phone Card */}
-        <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+        <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl">
               <i className="ri-whatsapp-fill"></i>
             </div>
-            <h3 className="font-bold text-gray-900 text-lg">Direct WhatsApp</h3>
-            <p className="text-xs text-gray-500">Fastest channel for immediate replies and quick discussions.</p>
+            <h3 className="font-bold text-gray-900 text-xl">WhatsApp & Phone</h3>
             <p className="font-semibold text-gray-900 text-sm">+234 9070685246</p>
           </div>
 
@@ -112,7 +109,7 @@ export function Contact() {
               href="https://wa.me/qr/HZ3MKMKKDZRHJ1"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-2 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-xl transition shadow-sm"
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-xl transition"
             >
               <i className="ri-whatsapp-fill text-base"></i>
               <span>Chat on WhatsApp</span>
@@ -121,66 +118,65 @@ export function Contact() {
         </div>
 
         {/* Location Card */}
-        <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+        <div className="p-8 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
             <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-2xl">
               <i className="ri-map-pin-2-fill"></i>
             </div>
-            <h3 className="font-bold text-gray-900 text-lg">Location & Timezone</h3>
-            <p className="text-xs text-gray-500">Based in Lagos, working with teams globally.</p>
-            <p className="font-semibold text-gray-900 text-sm">Lagos, Nigeria (WAT / UTC+1)</p>
+            <h3 className="font-bold text-gray-900 text-xl">Location</h3>
+            <p className="font-semibold text-gray-900 text-sm">Lagos, Nigeria</p>
           </div>
 
           <div className="pt-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>Available for Remote Work</span>
+              <span>Open to Remote & Global Work</span>
             </span>
           </div>
         </div>
       </div>
 
-      {/* Social Networks Grid */}
-      <div className="space-y-6">
+      {/* Social Networks Grid — Full Width */}
+      <div className="w-full space-y-6">
         <h2 className="text-2xl font-extrabold text-gray-900">Connect Across Social Channels</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {socials.map((social) => (
             <a
               key={social.name}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`p-5 rounded-2xl bg-white border border-gray-200 text-gray-800 transition-all duration-200 flex flex-col justify-between shadow-sm hover:shadow-md ${social.color} group`}
+              className={`p-6 rounded-2xl bg-white border border-gray-200 text-gray-800 transition-all duration-200 flex flex-col justify-between shadow-sm hover:shadow-md ${social.color} group`}
             >
               <div className="flex items-center justify-between">
                 <i className={`${social.icon} text-3xl`}></i>
                 <i className="ri-arrow-right-up-line text-sm opacity-50 group-hover:opacity-100 transition"></i>
               </div>
               <div className="mt-4">
-                <h4 className="font-bold text-sm">{social.name}</h4>
-                <p className="text-[11px] opacity-70 mt-0.5">{social.tag}</p>
+                <h4 className="font-bold text-base">{social.name}</h4>
+                <p className="text-xs opacity-70 mt-0.5">{social.tag}</p>
               </div>
             </a>
           ))}
         </div>
       </div>
 
-      {/* Availability Banner */}
-      <div className="p-8 sm:p-12 rounded-3xl bg-gray-900 text-white space-y-6 shadow-xl">
+      {/* Full Width Banner */}
+      <div className="w-full p-8 md:p-12 rounded-3xl bg-black text-white space-y-6 shadow-xl">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-white/10 pb-6">
           <div>
-            <h3 className="text-2xl font-bold">Work Status & Availability</h3>
-            <p className="text-sm text-gray-400 mt-1">Currently open to exciting frontend challenges.</p>
+            <h3 className="text-2xl md:text-3xl font-bold">Availability Status</h3>
+            <p className="text-sm text-gray-400 mt-1">Currently open to frontend developer roles & projects.</p>
           </div>
           <span className="px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold w-fit">
             Ready to Start
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm md:text-base">
           <div className="flex items-center gap-2">
             <i className="ri-check-line text-emerald-400 text-lg"></i>
-            <span>Frontend Engineering</span>
+            <span>Frontend Development</span>
           </div>
           <div className="flex items-center gap-2">
             <i className="ri-check-line text-emerald-400 text-lg"></i>
@@ -198,13 +194,13 @@ export function Contact() {
 
         <div className="pt-4 flex flex-wrap gap-4 items-center justify-between">
           <p className="text-xs text-gray-400">
-            Responds within 24 hours to all messages.
+            Responds within 24 hours.
           </p>
           <Link
             to="/Projects"
-            className="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1"
+            className="text-sm font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1"
           >
-            <span>Browse My 6 Live Websites First</span>
+            <span>View All 6 Websites First</span>
             <i className="ri-arrow-right-line"></i>
           </Link>
         </div>

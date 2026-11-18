@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     title: "Marketing & SEO Agency",
-    tagline: "Client Platform with Google SERP Simulator",
+    tagline: "Live Client Platform with Google SERP Simulator",
     description:
       "A digital marketing agency website featuring an interactive live Google search simulator, audit request form, and responsive client case studies.",
     link: "https://marketing-portfolio-sage-nbas-projects.vercel.app",
@@ -72,50 +72,50 @@ export function Home() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-5 py-8 md:py-16 space-y-20">
-      {/* HERO SECTION */}
-      <section className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-        {/* Left: Headline & Bio */}
-        <div className="md:col-span-7 space-y-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full w-fit">
+    <div className="w-full px-5 md:px-10 py-8 md:py-14 space-y-24">
+      {/* HERO SECTION — FULL WIDTH */}
+      <section className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Left: Massive Headline & Bio */}
+        <div className="lg:col-span-7 space-y-6">
+          <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-blue-600 bg-blue-50 border border-blue-200 px-4 py-1.5 rounded-full w-fit">
             Frontend Developer & Creative Designer
           </p>
 
           <h1
             style={{ fontFamily: "Bitcount Grid Double, sans-serif" }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[90px] xl:text-[110px] font-bold text-gray-900 leading-[0.98] tracking-tight"
           >
             Creative <br /> Designer
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-xl">
+          <p className="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl">
             Hi, I'm <strong className="text-gray-900">Emmanuel Samuel</strong>. I build clean,
-            modern, and responsive web experiences with <strong>React</strong>,{" "}
-            <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>. Check out my live
+            responsive, and modern web applications with <strong>React</strong>,{" "}
+            <strong>TypeScript</strong>, and <strong>Tailwind CSS</strong>. Explore my live
             websites and projects below.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
               onClick={scrollToProjects}
-              className="px-6 py-3 bg-gray-900 hover:bg-black text-white text-sm font-semibold rounded-2xl shadow-md transition"
+              className="px-8 py-4 bg-black hover:bg-gray-800 text-white text-base font-semibold rounded-2xl shadow-lg transition"
             >
               View My Websites ↓
             </button>
 
             <Link
               to="/Contact"
-              className="px-6 py-3 bg-white border border-gray-300 hover:border-gray-900 text-gray-800 text-sm font-semibold rounded-2xl transition"
+              className="px-8 py-4 bg-white border border-gray-300 hover:border-black text-gray-900 text-base font-semibold rounded-2xl transition"
             >
               Contact Me
             </Link>
           </div>
         </div>
 
-        {/* Right: Photo */}
-        <div className="md:col-span-5 flex justify-center">
-          <div className="w-full max-w-sm aspect-[10/12] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-gray-100">
+        {/* Right: Full Width Framed Photo */}
+        <div className="lg:col-span-5 flex justify-center lg:justify-end w-full">
+          <div className="w-full max-w-lg aspect-[10/12] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gray-100">
             <img
               src="images/samuel.jpeg"
               alt="Emmanuel Samuel"
@@ -125,15 +125,15 @@ export function Home() {
         </div>
       </section>
 
-      {/* WEBSITES & PROJECTS SECTION */}
-      <section id="projects" className="space-y-8 pt-8 border-t border-gray-200">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      {/* FULL WIDTH WEBSITES & PROJECTS SECTION */}
+      <section id="projects" className="w-full space-y-8 pt-10 border-t border-gray-200">
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 tracking-tight">
               My Websites & Projects
             </h2>
-            <p className="text-gray-600 text-sm md:text-base mt-2">
-              Click "Visit Website" to open any of my live sites or "GitHub" to view the source code.
+            <p className="text-gray-600 text-base md:text-lg mt-2">
+              Click "Visit Website" to launch any live site, or click "Code" to inspect the repository on GitHub.
             </p>
           </div>
 
@@ -141,61 +141,63 @@ export function Home() {
             href="https://github.com/Sage-NBA"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs font-bold text-gray-700 hover:text-black self-start sm:self-auto bg-gray-100 px-3 py-2 rounded-xl transition"
+            className="flex items-center gap-2 text-sm font-bold text-gray-800 hover:text-black self-start md:self-auto bg-gray-100 hover:bg-gray-200 px-4 py-2.5 rounded-2xl transition"
           >
-            <i className="ri-github-fill text-base"></i>
+            <i className="ri-github-fill text-lg"></i>
             <span>All on GitHub</span>
           </a>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects Grid — Occupies Full Screen Width */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((proj, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-all duration-200 flex flex-col justify-between space-y-4"
+              className="w-full p-7 rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between space-y-5"
             >
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wide">
+                  <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
                     {proj.tech}
                   </span>
                   {proj.isLive ? (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
                       🟢 Live on Vercel
                     </span>
                   ) : (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 text-gray-700">
-                      ⭐ Active
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-700">
+                      ⭐ Active Project
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900">{proj.title}</h3>
-                <p className="text-xs font-medium text-gray-500">{proj.tagline}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{proj.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900">{proj.title}</h3>
+                <p className="text-xs font-semibold text-gray-500">{proj.tagline}</p>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                  {proj.description}
+                </p>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 border-t border-gray-100 flex items-center gap-2">
+              <div className="pt-4 border-t border-gray-100 flex items-center gap-3">
                 <a
                   href={proj.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center py-2.5 px-4 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl shadow-sm transition flex items-center justify-center gap-1"
+                  className="flex-1 text-center py-3 px-4 bg-black hover:bg-gray-800 text-white text-sm font-bold rounded-2xl shadow-sm transition flex items-center justify-center gap-1.5"
                 >
                   <span>Visit Website</span>
-                  <i className="ri-arrow-right-up-line text-sm"></i>
+                  <i className="ri-arrow-right-up-line text-base"></i>
                 </a>
 
                 <a
                   href={proj.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-2.5 px-3 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold rounded-xl transition flex items-center gap-1"
+                  className="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-semibold rounded-2xl transition flex items-center gap-1.5"
                   title="View on GitHub"
                 >
-                  <i className="ri-github-fill text-sm"></i>
+                  <i className="ri-github-fill text-base"></i>
                   <span>Code</span>
                 </a>
               </div>
@@ -204,29 +206,29 @@ export function Home() {
         </div>
       </section>
 
-      {/* QUICK CONTACT BANNER */}
-      <section className="p-8 sm:p-10 rounded-3xl bg-gray-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div className="space-y-1 text-center sm:text-left">
-          <h3 className="text-2xl font-bold">Have a project in mind?</h3>
-          <p className="text-sm text-gray-400">
-            Let's build something clean and modern together.
+      {/* FULL WIDTH CONTACT CALLOUT */}
+      <section className="w-full p-8 md:p-14 rounded-3xl bg-black text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+        <div className="space-y-2 text-center md:text-left">
+          <h3 className="text-3xl md:text-4xl font-bold">Have a project in mind?</h3>
+          <p className="text-base text-gray-400">
+            Let's build something responsive, fast, and modern together.
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href="https://wa.me/qr/HZ3MKMKKDZRHJ1"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs rounded-xl transition flex items-center gap-1.5"
+            className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm rounded-2xl transition flex items-center gap-2"
           >
-            <i className="ri-whatsapp-fill text-base"></i>
-            <span>WhatsApp</span>
+            <i className="ri-whatsapp-fill text-lg"></i>
+            <span>WhatsApp Me</span>
           </a>
 
           <Link
             to="/Contact"
-            className="px-5 py-2.5 bg-white text-gray-900 hover:bg-gray-100 font-semibold text-xs rounded-xl transition"
+            className="px-6 py-3.5 bg-white text-black hover:bg-gray-100 font-semibold text-sm rounded-2xl transition"
           >
             Contact Page
           </Link>

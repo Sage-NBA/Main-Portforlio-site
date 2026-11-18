@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const allProjects = [
   {
     title: "Marketing & SEO Agency",
-    tagline: "Client Platform with Google SERP Simulator",
+    tagline: "Live Client Platform with Google SERP Simulator",
     description:
       "A digital marketing agency website featuring an interactive live Google search simulator, audit request form, and responsive client case studies.",
     link: "https://marketing-portfolio-sage-nbas-projects.vercel.app",
@@ -65,80 +65,82 @@ const allProjects = [
 
 export function ProjectsPage() {
   return (
-    <div className="max-w-6xl mx-auto px-5 py-12 space-y-10">
+    <div className="w-full px-5 md:px-10 py-12 space-y-10">
       {/* Top Bar */}
-      <div className="flex items-center justify-between">
+      <div className="w-full flex items-center justify-between">
         <Link
           to="/"
-          className="text-xs font-bold text-gray-600 hover:text-black flex items-center gap-1.5"
+          className="text-sm font-bold text-gray-700 hover:text-black flex items-center gap-1.5"
         >
           <i className="ri-arrow-left-line"></i>
           <span>Back to Home</span>
         </Link>
 
-        <span className="text-xs font-bold px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">
+        <span className="text-xs font-bold px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full border border-emerald-200">
           6 Live Applications
         </span>
       </div>
 
       {/* Header */}
       <div className="space-y-3">
-        <h1 className="text-3xl sm:text-5xl font-black text-gray-900 tracking-tight">
+        <h1 className="text-4xl sm:text-6xl font-black text-gray-900 tracking-tight">
           Websites & Projects
         </h1>
-        <p className="text-gray-600 text-sm sm:text-base max-w-2xl">
+        <p className="text-gray-600 text-base md:text-lg max-w-3xl">
           Below is a complete collection of my web applications, client solutions, and dashboards.
           Click any link to visit the live site directly.
         </p>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Projects Grid — Full Screen Width */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {allProjects.map((proj, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition flex flex-col justify-between space-y-4"
+            className="w-full p-7 rounded-3xl border border-gray-200 bg-white shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col justify-between space-y-5"
           >
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wide">
+                <span className="text-xs font-bold text-blue-600 uppercase tracking-wide">
                   {proj.tech}
                 </span>
                 {proj.isLive ? (
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
                     🟢 Live on Vercel
                   </span>
                 ) : (
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 text-gray-700">
-                    ⭐ Active
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-gray-100 text-gray-700">
+                    ⭐ Active Project
                   </span>
                 )}
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900">{proj.title}</h3>
-              <p className="text-xs font-medium text-gray-500">{proj.tagline}</p>
-              <p className="text-sm text-gray-600 leading-relaxed">{proj.description}</p>
+              <h3 className="text-2xl font-bold text-gray-900">{proj.title}</h3>
+              <p className="text-xs font-semibold text-gray-500">{proj.tagline}</p>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+                {proj.description}
+              </p>
             </div>
 
-            <div className="pt-4 border-t border-gray-100 flex items-center gap-2">
+            <div className="pt-4 border-t border-gray-100 flex items-center gap-3">
               <a
                 href={proj.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-center py-2.5 px-4 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1"
+                className="flex-1 text-center py-3 px-4 bg-black hover:bg-gray-800 text-white text-sm font-bold rounded-2xl transition flex items-center justify-center gap-1.5"
               >
                 <span>Visit Website</span>
-                <i className="ri-arrow-right-up-line text-sm"></i>
+                <i className="ri-arrow-right-up-line text-base"></i>
               </a>
 
               <a
                 href={proj.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2.5 px-3 bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold rounded-xl transition flex items-center gap-1"
+                className="py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-semibold rounded-2xl transition flex items-center gap-1.5"
                 title="View on GitHub"
               >
-                <i className="ri-github-fill text-sm"></i>
+                <i className="ri-github-fill text-base"></i>
                 <span>Code</span>
               </a>
             </div>
