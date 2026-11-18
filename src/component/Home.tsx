@@ -26,10 +26,10 @@ const projects = [
     tagline: "Live Multi-Widget Dashboard",
     description:
       "An interactive real-time dashboard featuring live weather forecasts, crypto price trackers, daily quotes, and quick notes.",
-    link: "https://github.com/Sage-NBA/Weather",
+    link: "https://wheather-mocha-two.vercel.app/",
     github: "https://github.com/Sage-NBA/Weather",
     tech: "React • TypeScript • Tailwind",
-    isLive: false,
+    isLive: true,
   },
   {
     title: "Roadmap & Milestone Tracker",
